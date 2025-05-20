@@ -1,0 +1,74 @@
+.header-nav {
+    display: flex;
+    justify-content: right;
+}
+
+.header-nav__link {
+    margin-right: 10px;
+    text-decoration: none;
+    margin-right: 50px;
+    font-weight: 800;
+
+}
+
+.content__inner{
+    width: 84%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 40px;
+    
+}
+
+.attendance__heading{
+    padding: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form{
+    display: flex;
+    justify-content: center;
+}
+
+.search-form__date{
+    padding-left:10px;
+    padding-right: 10px;
+}
+
+.attendance__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgb(196, 188, 188);
+    border-bottom: 1px solid rgb(196, 188, 188);
+
+}
+
+.attendance__table {
+    width: 100%;
+}
+
+.attendance__label,
+.attendance__data {
+    padding: 16px 8px;
+}
+
+.attendance__label:first-of-type,
+.attendance__data:first-of-type {
+    padding-left: 48px;
+}
+
+.attendance__label {
+    text-align: left;
+}
+
+.attendance__data {
+    border-top: 1px solid rgb(196, 188, 188);
+}
+
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
