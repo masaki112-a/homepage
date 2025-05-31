@@ -1,0 +1,89 @@
+.post-list-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.post-create-btn-wrapper {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.post-create-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.post-status-alert {
+    margin: 0 auto 1rem auto;
+    max-width: 600px;
+    background: #f8fafc;
+    color: #266f3e;
+    border-left: 4px solid #28a745;
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+}
+
+.post-list {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.post-list-item {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.3rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.2s;
+}
+
+.post-list-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.09);
+}
+
+.post-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: #2d2d2d;
+}
+
+.post-body {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.8rem;
+    white-space: pre-wrap;
+}
+
+.post-meta {
+    font-size: 0.92rem;
+    color: #888;
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+.post-pagination {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.post-list-empty {
+    text-align: center;
+    color: #999;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+/* 予約投稿（未来公開）の投稿を管理者向けに薄く表示する */
+.post-scheduled {
+    opacity: 0.55;
+    pointer-events: none;
+    background: #f5f5f5;
+}

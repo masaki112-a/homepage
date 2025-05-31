@@ -1,0 +1,185 @@
+/* --- 全体レイアウト --- */
+.profile-main-flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    margin-bottom: 1.6rem;
+}
+
+.profile-info-block {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.profile-avatar-side {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-width: 100px;
+}
+
+.profile-avatar-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #e5e7eb;
+    background: #f3f4f6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: block;
+    margin-left: auto;
+}
+
+/* --- 見出しと説明 --- */
+.profile-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.01em;
+}
+
+/* --- ラベル・値表示 --- */
+.profile-view-label {
+    font-weight: 600;
+    color: #444;
+    font-size: 0.98rem;
+    margin-bottom: 0.18rem;
+    display: block;
+    letter-spacing: 0.01em;
+}
+
+.profile-view-value {
+    font-size: 1.05rem;
+    color: #222;
+    background: #f9fafb;
+    border-radius: 0.35rem;
+    padding: 0.65rem 1.2rem;
+    margin-bottom: 0.9rem;
+    word-break: break-all;
+}
+
+/* --- アカウント種別 --- */
+.profile-account-typ,
+.profile-account-type {
+    background: #f9fafb;
+    border-radius: 0.35rem;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    color: #444;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+/* --- プロフィール統計 --- */
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    margin-top: 2rem;
+}
+
+.profile-stat-card {
+    background: #f3f4f6;
+    border-radius: 0.6rem;
+    padding: 1.1rem;
+    text-align: left;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.profile-stat-title {
+    font-size: 0.98rem;
+    color: #777;
+    margin-bottom: 0.17rem;
+    letter-spacing: 0.01em;
+}
+
+.profile-stat-value {
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #222;
+    margin-top: 0.3rem;
+    letter-spacing: 0.01em;
+}
+
+/* --- ボタン --- */
+.submit-btn {
+    border: none;
+    outline: none;
+    background: #6366f1;
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    padding: 0.76rem 1.7rem;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: background 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+    background: #4338ca;
+    box-shadow: 0 3px 8px rgba(99, 102, 241, 0.09);
+    text-decoration: none;
+}
+
+/* --- パスワード変更セクション --- */
+.password-change-section {
+    margin-top: 2.2rem;
+    text-align: right;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 900px) {
+    .profile-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-main-flex {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .profile-avatar-img {
+        width: 64px;
+        height: 64px;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .profile-avatar-side {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-title {
+        font-size: 1.12rem;
+    }
+
+    .profile-view-label,
+    .profile-stat-title {
+        font-size: 0.93rem;
+    }
+
+    .profile-stat-value {
+        font-size: 1.08rem;
+    }
+
+    .profile-avatar-img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .submit-btn {
+        padding: 0.48rem 1.1rem;
+        font-size: 0.97rem;
+    }
+}

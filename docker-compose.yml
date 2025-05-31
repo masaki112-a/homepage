@@ -1,0 +1,98 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.25-alpine  
+    container_name: homepage-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    networks:
+      - homepage
+
+  php:
+    build: 
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: homepage-php
+    volumes:
+      - ./src:/var/www:delegated
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=laravel_db
+      - DB_USERNAME=laravel_user
+      - DB_PASSWORD=laravel_pass
+    networks:
+      - homepage
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0.35  # バージョンを固定
+    container_name: homepage-mysql
+    platform: linux/x86_64
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: laravel_db
+      MYSQL_USER: laravel_user
+      MYSQL_PASSWORD: laravel_pass
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      # my.cnfのマウントを一時的に無効化
+      # - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    networks:
+      - homepage
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: homepage-phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_USER=${DB_USERNAME:-laravel_user}
+      - PMA_PASSWORD=${DB_PASSWORD:-laravel_pass}
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - homepage
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  node:
+    image: node:20-alpine
+    container_name: homepage-node
+    working_dir: /var/www
+    volumes:
+      - ./src:/var/www
+    networks:
+      - homepage
+    tty: true
+    command: tail -f /dev/null
+
+networks:
+  homepage:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local

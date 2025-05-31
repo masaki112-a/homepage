@@ -1,0 +1,100 @@
+.schedule-container {
+    margin: 2em auto;
+    max-width: 700px;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid #ddd;
+    width: 14.2%;
+    height: 60px;
+    text-align: center;
+}
+
+.calendar-other-month {
+    color: #ccc;
+    background: #f9f9f9;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+#event-popup {
+    position: absolute;
+    min-width: 200px;
+    background: #fff;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    z-index: 9999;
+    display: none;
+    font-size: 0.95em;
+    max-width: 80vw;
+}
+
+#event-popup:after {
+    content: '';
+    position: absolute;
+    border: 10px solid transparent;
+    border-bottom-color: #fff;
+    top: -20px;
+    left: 20px;
+}
+
+.event-popup-title {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #222;
+}
+
+.event-popup-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.event-popup-list li {
+    margin-bottom: 0.2em;
+}
+
+.event-popup-time {
+    color: #999;
+    margin-right: 0.5em;
+    font-size: 0.95em;
+}
+
+.has-event {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #29a;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    #event-popup {
+        font-size: 0.9em;
+        min-width: 150px;
+        max-width: 98vw;
+    }
+}
+/* クリック可能なセル強調・カーソル変更 */
+.clickable-cell {
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.clickable-cell:hover {
+    background: #ffe5b0;
+    box-shadow: 0 0 0 2px #ffa500;
+}

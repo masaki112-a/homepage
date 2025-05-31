@@ -1,0 +1,232 @@
+body {
+    background: #f7f8fa;
+    color: #222;
+    font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: #34495e;
+    color: #fff;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(52, 73, 94, 0.07);
+}
+
+.header__heading {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+}
+
+.header__logo {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header__logo:hover {
+    color: #1abc9c;
+    cursor: pointer;
+}
+
+.header__nav {
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav {
+    display: flex;
+    gap: 1.3rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.header-nav__item {
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav__link,
+.header-nav__button {
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+.header-nav__link:hover,
+.header-nav__button:hover {
+    background: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-nav__button {
+    font-family: inherit;
+}
+
+main {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(52, 73, 94, 0.10);
+}
+
+footer {
+    text-align: center;
+    color: #888;
+    margin: 2rem 0 1rem 0;
+    font-size: 0.95em;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #1abc9c;
+}
+
+.alert {
+    background: #d1f2eb;
+    border-left: 5px solid #1abc9c;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #117864;
+    border-radius: 4px;
+}
+
+ul.post-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.post-list li {
+    background: #f2f3f7;
+    margin-bottom: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(44, 62, 80, 0.06);
+    padding: 1.2rem 1.5rem;
+}
+
+ul.post-list li .post-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #34495e;
+}
+
+ul.post-list li .post-body {
+    margin: 0.8rem 0 0.5rem 0;
+    color: #333;
+    line-height: 1.7;
+}
+
+ul.post-list li .post-meta {
+    font-size: 0.92em;
+    color: #888;
+    text-align: right;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ...既存コード... */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+.modal-window {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    animation: slideInRight 0.2s;
+}
+
+@keyframes slideInRight {
+    from {
+        right: -320px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.modal-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 32px;
+}
+
+.modal-list li {
+    margin-bottom: 24px;
+}
+
+.header__menu-trigger {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 24px;
+    padding: 8px 12px;
+    transition: background 0.2s;
+}
+
+.header__menu-trigger:hover {
+    background: #f0f0f0;
+    border-radius: 4px; }
